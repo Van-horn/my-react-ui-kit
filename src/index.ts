@@ -1,7 +1,4 @@
-import MyButton from "./MyButton/MyButton";
-import MyInput from "./MyInput/MyInput";
+import FilledButton from "./components/Buttons/FilledButton/FilledButton"
+import NormaInput from "./components/Inputs/NormaInput/NormaInput"
 
-export {
-    MyButton,
-    MyInput
-}
+export { FilledButton, NormaInput }

@@ -1,0 +1,8 @@
+input {
+	border-radius: 50%;
+	color: inherit;
+}
+
+.input:user-invalid {
+	border-color: #ff0000;
+}
