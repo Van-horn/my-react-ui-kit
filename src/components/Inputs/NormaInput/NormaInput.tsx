@@ -3,12 +3,12 @@ import { InputHTMLAttributes, memo, FC } from "react"
 
 import styles from "./NormaInput.module.css"
 
-interface NormaInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface NormaInputProps extends InputHTMLAttributes<HTMLInputElement> {
+	value: string
+}
 
 const NormaInput: FC<NormaInputProps> = (props) => {
-	const allClasses: string[] = [styles.input, props?.className ?? ""]
-
-	return <input {...props} className={allClasses.join(" ")} />
+	return <input {...props} />
 }
 
 export default memo(NormaInput)

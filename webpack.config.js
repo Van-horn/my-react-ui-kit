@@ -1,6 +1,5 @@
 const path = require('path');
 
-
 module.exports = {
 	mode: "production",
 	entry: "./src/index.ts",
@@ -11,22 +10,39 @@ module.exports = {
 		clean: true,
 	},
 	resolve: {
-		extensions: [".ts", ".tsx"],
+		extensions: [".js", ".ts", ".tsx", ".scss", ".css"],
 	},
 	externals: {
 		react: "react",
+		"react-dom": "react-dom",
+		"styled-components": "styled-components",
 	},
 	module: {
 		rules: [
 			{
-				test: /\.module.css/,
+				test: /\.css$/,
 				use: ["style-loader", "css-loader"],
 			},
 			{
+				test: /\.scss$/,
+				use: ["style-loader", "css-loader", "sass-loader"],
+			},
+			{
 				test: /\.(ts|tsx)?$/,
-				use: ["ts-loader"],
+				use: [
+					{
+						loader: "ts-loader",
+						options: {
+							transpileOnly: true,
+						},
+					},
+				],
 				exclude: /node_modules/,
 			},
 		],
+	},
+	plugins: [],
+	optimization: {
+		usedExports: true,
 	},
 }

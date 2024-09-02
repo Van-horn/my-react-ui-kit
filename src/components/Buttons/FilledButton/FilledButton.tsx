@@ -1,13 +1,46 @@
 import React from "react"
 import { ButtonHTMLAttributes, memo, FC } from "react"
+import styled from "styled-components"
 
-import styles from "./FilledButton.module.css"
+import {
+	I_TAB_reactionOptions,
+	TAB_reactionOptions,
+} from "../../../shared-data-for-styles/TAB-on-element/reaction-options"
+import {
+	I_hover_reactionOptions,
+	hover_reactionOptions,
+} from "../../../shared-data-for-styles/hover-on-element/reaction-options"
 
-interface FilledButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+namespace IButtonStyles {
+	export interface IStyles extends React.CSSProperties {
+		hover_reaction?: keyof I_hover_reactionOptions
+		TAB_reaction?: keyof I_TAB_reactionOptions
+	}
+}
+
+export interface FilledButtonProps
+	extends ButtonHTMLAttributes<HTMLButtonElement> {
+	label: string
+	styles?: IButtonStyles.IStyles
+}
+
+const Button = styled.button.withConfig({
+	shouldForwardProp: (prop) => !["styles", "label"].includes(prop),
+})<FilledButtonProps>`
+	cursor: pointer;
+	color: inherit;
+	&:hover {
+		${(props) =>
+			hover_reactionOptions[props?.styles?.hover_reaction ?? "none"]}
+	}
+
+	&:focus-visible {
+		${(props) => TAB_reactionOptions[props?.styles?.TAB_reaction ?? "none"]}
+	}
+`
 
 const FilledButton: FC<FilledButtonProps> = (props) => {
-	const allClasses: string[] = [styles.button, props?.className ?? ""]
-	return <button {...props} className={allClasses.join(" ")} />
+	return <Button {...props}>{props.label}</Button>
 }
 
 export default memo(FilledButton)
