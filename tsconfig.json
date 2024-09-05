@@ -11,6 +11,7 @@
 		"noImplicitAny": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
+
 		"sourceMap": true,
 		"declaration": true,
 		"incremental": true

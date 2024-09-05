@@ -1,6 +1,7 @@
+import { FC } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
-import FilledButton from "./FilledButton"
+import FilledButton from "./RoundedButton"
 
 const meta = {
 	title: "Buttons/FilledButton",
@@ -16,27 +17,28 @@ const meta = {
 			defaultValue: "click",
 			control: "text",
 		},
-		styles: {
-			control: { type: "object" },
-			description: "Styles for button.",
-			defaultValue: { tabReaction: "none" },
+		hover_reaction: {
+			control: {
+				type: "select",
+			},
+			options: ["none", "zwed"],
+			description: "Reaction when hovering over the button.",
 		},
-		// style: {
-		// 	tabReaction: {
-		// 		control: {
-		// 			type: "select",
-		// 			options: ["zoom", "none"],
-		// 		},
-		// 		description: "Options for styling when focusing with TAB.",
-		// 	},
-		// },
 	},
+
+	// style: {
+	// 	tabReaction: {
+	// 		control: {
+	// 			type: "select",
+	// 			options: ["zoom", "none"],
+	// 		},
+	// 		description: "Options for styling when focusing with TAB.",
+	// 	},
+	// },
+
 	args: {
-		label: "click",
-		styles: {
-			TAB_reaction: "none",
-			hover_reaction: "none",
-		},
+		label: "clicksss",
+		hover_reaction: "none",
 	},
 } satisfies Meta<typeof FilledButton>
 
@@ -47,9 +49,9 @@ type Story = StoryObj<typeof meta>
 export const Normal: Story = {
 	args: {},
 }
-export const Normal2: Story = {
-	args: {},
-}
+// export const Normal2: Story = {
+// 	args: {},
+// }
 
 // export const Secondary: Story = {
 // 	args: {
