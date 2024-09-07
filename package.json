@@ -7,7 +7,7 @@
 		"pub": "webpack && npm version patch && npm publish",
 		"build": "webpack",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build -o docs"
 	},
 	"keywords": [],
 	"author": "Alexsander Bondar",
