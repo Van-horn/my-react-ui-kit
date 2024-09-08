@@ -1,11 +1,11 @@
 import React, { FC } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
-import RoundedButton from "./RoundedButton"
+import OnePieceButton from "./OnePieceButton"
 
 const meta = {
-	title: "Buttons/RoundedButton",
-	component: RoundedButton,
+	title: "Buttons/OnePieceButtons",
+	component: OnePieceButton,
 	parameters: {
 		layout: "centered",
 	},
@@ -25,8 +25,15 @@ const meta = {
 		},
 		kind: {
 			control: "select",
-			options: ["ghost", "none"],
+			options: ["ghost", "filled", "none"],
 			description: "Button type.",
+			defaultValue: "none",
+		},
+		rounding: {
+			control: "select",
+			options: ["semicircle", "medium", "slight", "none"],
+			description:
+				"Rounding an element. It works only, when you indicated button width.",
 			defaultValue: "none",
 		},
 		width: {
@@ -49,7 +56,7 @@ const meta = {
 	args: {
 		value: "click",
 	},
-} satisfies Meta<typeof RoundedButton>
+} satisfies Meta<typeof OnePieceButton>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -63,6 +70,23 @@ export const Primary: Story = {
 		},
 	},
 }
+export const Filled: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Simple Filled button.",
+			},
+		},
+	},
+	args: {
+		themeColor: "purple",
+		rounding: "slight",
+		kind: "filled",
+		width: 7,
+		height: 2.5,
+		TAB_reaction: "zoom",
+	},
+}
 
 export const Ghost: Story = {
 	parameters: {
@@ -74,33 +98,10 @@ export const Ghost: Story = {
 	},
 	args: {
 		themeColor: "purple",
+		rounding: "semicircle",
 		kind: "ghost",
-		width: 6,
+		width: 7,
 		height: 2.5,
 		TAB_reaction: "zoom",
 	},
 }
-
-// export const Normal2: Story = {
-// 	args: {},
-// }
-
-// export const Secondary: Story = {
-// 	args: {
-// 		label: "Button",
-// 	},
-// }
-
-// export const Large: Story = {
-// 	args: {
-// 		size: "large",
-// 		label: "Button",
-// 	},
-// }
-
-// export const Small: Story = {
-// 	args: {
-// 		size: "small",
-// 		label: "Button",
-// 	},
-// }

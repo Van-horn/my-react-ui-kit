@@ -3,23 +3,24 @@ import { memo, FC } from "react"
 import styled from "styled-components"
 
 import ResetCss from "../../../reset.js"
-import buttonKinds from "./RoundedButton.module.scss"
+import buttonKinds from "./OnePieceButton.module.scss"
 import {
 	I_TAB_reactionOptions,
 	TAB_reactionOptions,
 } from "../../../shared-data-for-styles/TAB-on-element/reaction-options"
-// import {
-// 	I_hover_reactionOptions,
-// 	hover_reactionOptions,
-// } from "../../../shared-data-for-styles/hover-on-element/reaction-options"
+import {
+	IRoundingOptions,
+	roundingOptions,
+} from "../../../shared-data-for-styles/element-rounding"
 
 interface SpeciaStyles {
 	themeColor?: string
 	kind?: keyof typeof buttonKinds
 	TAB_reaction?: keyof I_TAB_reactionOptions
+	rounding?: keyof IRoundingOptions
 }
 
-export interface RoundedButtonProps
+export interface OnePieceButtonProps
 	extends InputHTMLAttributes<HTMLInputElement>,
 		SpeciaStyles {
 	value: string
@@ -29,21 +30,28 @@ export interface RoundedButtonProps
 
 const Button = styled.input.withConfig({
 	shouldForwardProp: (prop) =>
-		!["themeColor", "kind", "TAB_reaction", "width"].includes(prop),
-})<RoundedButtonProps>`
+		![
+			"themeColor",
+			"kind",
+			"TAB_reaction",
+			"width",
+			"height",
+			"rounding",
+		].includes(prop),
+})<OnePieceButtonProps>`
 	${(props) => `
 		--theme-color: ${props?.themeColor ?? "black"};
 		cursor: pointer;
 		width: ${props?.width ?? 6}em;
 		height: ${props?.height ?? 2.5}em;
-		font-size: ${props?.width ? props.width / 6 + "em" : "17px"};
-		border-radius: ${props?.width ? props.width / 2 : 4}em;
+		font-size: ${props?.width ? props.width / 7 + "em" : "17px"};
+		border-radius: ${props?.width && props?.rounding ? props.width / roundingOptions[props.rounding] : 0}em;
 		&:focus-visible {
 			${TAB_reactionOptions[props?.TAB_reaction ?? "none"]};
 		}`}
 `
 
-const RoundedButton: FC<RoundedButtonProps> = memo((props) => {
+const OnePieceButton: FC<OnePieceButtonProps> = memo((props) => {
 	const classes = [
 		props?.className ?? "",
 		props?.kind ? buttonKinds[props.kind] : buttonKinds["none"],
@@ -57,4 +65,4 @@ const RoundedButton: FC<RoundedButtonProps> = memo((props) => {
 	)
 })
 
-export default RoundedButton
+export default OnePieceButton

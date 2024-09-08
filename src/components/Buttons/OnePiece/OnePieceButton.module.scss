@@ -1,7 +1,14 @@
+@import "../../../sass/extends.scss";
+
 .none {
     border: none;
     color: var(--theme-color);
+}
 
+.filled {
+    color: white;
+    background-color: var(--theme-color);
+    border: none;
 }
 
 @media (hover:hover) {
@@ -18,9 +25,6 @@
     }
 
 }
-
-
-
 
 @media not (hover:hover) {
     .ghost {
