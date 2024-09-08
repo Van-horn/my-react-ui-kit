@@ -1,0 +1,30 @@
+.none {
+    border: none;
+    color: var(--theme-color);
+
+}
+
+@media (hover:hover) {
+    .ghost {
+        border: 0.18em solid var(--theme-color);
+        color: var(--theme-color);
+        background-color: transparent;
+    }
+
+    .ghost:hover {
+        color: white;
+        background-color: var(--theme-color);
+        transition: background-color 0.2s ease;
+    }
+
+}
+
+
+
+
+@media not (hover:hover) {
+    .ghost {
+        color: white;
+        background-color: var(--theme-color);
+    }
+}
