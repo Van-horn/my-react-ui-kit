@@ -3,7 +3,7 @@ import { memo, FC } from "react"
 import styled from "styled-components"
 
 import ResetCss from "../../../reset.js"
-import buttonKinds from "./OnePieceButton.module.scss"
+import inputKinds from "./OnePieceInput.module.scss"
 import {
 	I_TAB_reactionOptions,
 	TAB_reactionOptions,
@@ -15,16 +15,16 @@ import {
 
 interface SpeciaStyles {
 	themeColor?: string
-	kind?: keyof typeof buttonKinds
+	kind?: keyof typeof inputKinds
 	TAB_reaction?: keyof I_TAB_reactionOptions
-	border?: "solid" | "double"
 	rounding?: keyof IRoundingOptions
 }
 
-export interface OnePieceButtonProps
+export interface OnePieceInputProps
 	extends InputHTMLAttributes<HTMLInputElement>,
 		SpeciaStyles {
-	value: string
+	value?: string
+	isValid?: boolean
 	width?: number
 	height?: number
 }
@@ -35,18 +35,17 @@ const Button = styled.input.withConfig({
 			"themeColor",
 			"kind",
 			"TAB_reaction",
-			"doubleBorder",
 			"rounding",
+			"isValid",
 			"width",
 			"height",
 		].includes(prop),
-})<OnePieceButtonProps>`
+})<OnePieceInputProps>`
 	${(props) => `
 		--theme-color: ${props?.themeColor ?? "black"};
 		cursor: pointer;
 		width: ${props?.width ?? 6}em;
 		height: ${props?.height ?? 2.5}em;
-		border-style: ${props?.border ?? ""};
 		font-size: ${props?.width ? props.width / 7 + "em" : "17px"};
 		border-radius: ${props?.width && props?.rounding ? props.width / roundingOptions[props.rounding] : 0}em;
 		&:focus-visible {
@@ -54,10 +53,10 @@ const Button = styled.input.withConfig({
 		}`}
 `
 
-const OnePieceButton: FC<OnePieceButtonProps> = memo((props) => {
+const OnePieceInput: FC<OnePieceInputProps> = memo((props) => {
 	const classes = [
 		props?.className ?? "",
-		props?.kind ? buttonKinds[props.kind] : buttonKinds["none"],
+		props?.kind ? inputKinds[props.kind] : inputKinds["none"],
 	].join(" ")
 
 	return (
@@ -68,4 +67,4 @@ const OnePieceButton: FC<OnePieceButtonProps> = memo((props) => {
 	)
 })
 
-export default OnePieceButton
+export default OnePieceInput

@@ -1,4 +1,4 @@
-import RoundedButton from "./components/Buttons/OnePiece/OnePieceButton"
-import NormaInput from "./components/Inputs/NormaInput/NormaInput"
+import OnePieceButton from "./components/Buttons/OnePiece/OnePieceButton"
+import OnePieceInput from "./components/Inputs/OnePiece/OnePieceInput"
 
-export { RoundedButton, NormaInput }
+export { OnePieceButton, OnePieceInput }

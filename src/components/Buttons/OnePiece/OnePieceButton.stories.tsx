@@ -1,4 +1,3 @@
-import React, { FC } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
 import OnePieceButton from "./OnePieceButton"
@@ -28,6 +27,12 @@ const meta = {
 			options: ["ghost", "filled", "none"],
 			description: "Button type.",
 			defaultValue: "none",
+		},
+		border: {
+			control: "select",
+			options: ["solid", "double"],
+			description: "Button's border style.",
+			defaultValue: "solid",
 		},
 		rounding: {
 			control: "select",
