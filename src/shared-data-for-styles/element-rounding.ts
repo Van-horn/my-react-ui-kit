@@ -6,8 +6,8 @@ export interface IRoundingOptions {
 }
 
 export const roundingOptions: IRoundingOptions = {
-	semicircle: 2,
-	medium: 7,
-	slight: 20,
+	semicircle: 1 / 2,
+	medium: 1 / 7,
+	slight: 1 / 20,
 	none: 0,
 }

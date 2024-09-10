@@ -7,4 +7,8 @@ export default createGlobalStyle`
     padding: 0;
     font-family: 'Roboto', sans-serif;
   }
+  button {
+    cursor: pointer;
+    background-clip: content-box;
+  }
 `

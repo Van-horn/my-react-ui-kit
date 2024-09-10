@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import OnePieceButton from "./OnePieceButton"
+import OnePieceButton from "."
 
 const meta = {
 	title: "Buttons/OnePieceButtons",
@@ -10,10 +10,10 @@ const meta = {
 	},
 	tags: ["autodocs", "wip"],
 	argTypes: {
-		value: {
+		text: {
 			required: true,
-			description: "Text in button.",
 			control: "text",
+			description: "Text in button.",
 			defaultValue: "click",
 		},
 		themeColor: {
@@ -28,17 +28,11 @@ const meta = {
 			description: "Button type.",
 			defaultValue: "none",
 		},
-		border: {
-			control: "select",
-			options: ["solid", "double"],
-			description: "Button's border style.",
-			defaultValue: "solid",
-		},
 		rounding: {
 			control: "select",
 			options: ["semicircle", "medium", "slight", "none"],
 			description:
-				"Rounding an element. It works only, when you indicated button width.",
+				"Rounding an element. It works only, when you indicated button height.",
 			defaultValue: "none",
 		},
 		width: {
@@ -57,9 +51,15 @@ const meta = {
 			description: "Options for styling when focusing with TAB.",
 			defaultValue: "none",
 		},
+		hover_reaction: {
+			control: "select",
+			options: ["blackout", "lightening", "none"],
+			description: "Options for styling when hovering.",
+			defaultValue: "none",
+		},
 	},
 	args: {
-		value: "click",
+		text: "click",
 	},
 } satisfies Meta<typeof OnePieceButton>
 
@@ -88,8 +88,9 @@ export const Filled: Story = {
 		rounding: "slight",
 		kind: "filled",
 		width: 7,
-		height: 2.5,
+		height: 3,
 		TAB_reaction: "zoom",
+		hover_reaction: "lightening",
 	},
 }
 
@@ -103,10 +104,10 @@ export const Ghost: Story = {
 	},
 	args: {
 		themeColor: "purple",
-		rounding: "semicircle",
+		rounding: "medium",
 		kind: "ghost",
 		width: 7,
-		height: 2.5,
+		height: 3,
 		TAB_reaction: "zoom",
 	},
 }
