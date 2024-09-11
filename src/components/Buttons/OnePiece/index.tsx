@@ -19,7 +19,7 @@ import {
 
 interface SpeciaStyles {
 	themeColor?: string
-	kind?: "ghost" | "filled" | "none"
+	kind?: "ghost" | "filled" | "filling" | "ghost-filling" | "none"
 	TAB_reaction?: keyof I_TAB_reactionOptions
 	hover_reaction?: keyof I_hover_reactionOptions
 	rounding?: keyof IRoundingOptions
@@ -40,7 +40,7 @@ const Button = styled.button.withConfig({
 		--theme-color: ${props?.themeColor ?? "black"};
 		width: ${props?.width ?? 7}em;
 		height: ${props?.height ?? 3}em;
-		font-size: ${props?.width ? props.width / 7 : 1}em;
+		font-size: ${props?.height ? props.height / 2.7 : 1.1}em;
 		border-radius: ${props?.height && props?.rounding ? props.height * roundingOptions[props.rounding] : 0}em;
 
 		&:hover {

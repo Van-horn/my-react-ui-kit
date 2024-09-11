@@ -24,7 +24,7 @@ const meta = {
 		},
 		kind: {
 			control: "select",
-			options: ["ghost", "filled", "none"],
+			options: ["ghost", "filled", "filling", "ghost-filling", "none"],
 			description: "Button type.",
 			defaultValue: "none",
 		},
@@ -98,7 +98,7 @@ export const Ghost: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: "Button with initially transparent background.",
+				story: "Button with transparent background.",
 			},
 		},
 	},
@@ -109,5 +109,39 @@ export const Ghost: Story = {
 		width: 7,
 		height: 3,
 		TAB_reaction: "zoom",
+	},
+}
+export const GhostFilling: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Button with initially transparent background, filling on hover.",
+			},
+		},
+	},
+	args: {
+		themeColor: "purple",
+		rounding: "medium",
+		kind: "ghost-filling",
+		width: 7,
+		height: 3,
+		TAB_reaction: "zoom",
+	},
+}
+
+export const Filling: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Button that fills on hover.",
+			},
+		},
+	},
+	args: {
+		themeColor: "purple",
+		rounding: "semicircle",
+		kind: "filling",
+		width: 7,
+		height: 3,
 	},
 }

@@ -9,24 +9,32 @@
     border: none;
 }
 
-@media (hover:hover) {
-    .ghost {
+.filling {
+    background-clip: content-box;
+    padding: 0.2em;
+    border: 0.18em solid var(--theme-color);
+    background-color: var(--theme-color);
+    color: white;
+    transition: padding 0.2s ease;
+    }
+
+.ghost,
+.ghost-filling {
         border: 0.18em solid var(--theme-color);
         color: var(--theme-color);
         background-color: transparent;
     }
 
-    .ghost:hover {
+
+@media (hover:hover) {
+    .filling:hover {
+        padding: 0;
+        transition: padding 0.2s ease;
+    } 
+     .ghost-filling:hover {
         color: white;
         background-color: var(--theme-color);
         transition: background-color 0.2s ease;
     }
-
 }
 
-@media not (hover:hover) {
-    .ghost {
-        color: white;
-        background-color: var(--theme-color);
-    }
-}

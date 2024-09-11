@@ -9,6 +9,8 @@ export default createGlobalStyle`
   }
   button {
     cursor: pointer;
-    background-clip: content-box;
+    /* background-clip: content-box; */
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 `
