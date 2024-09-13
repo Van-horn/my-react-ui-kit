@@ -17,7 +17,6 @@ interface SpeciaStyles {
 export interface OnePieceInputProps
 	extends InputHTMLAttributes<HTMLInputElement>,
 		SpeciaStyles {
-	value?: string
 	width?: number
 	height?: number
 }
@@ -33,7 +32,7 @@ const Input = styled.input.withConfig({
 		padding: 0em 0.5em;
 		width: ${props?.width ?? 13}em;
 		height: ${props?.height ?? 2.5}em;
-		font-size: ${props?.height ? props.height / 2.3 : 1.1}em;
+		font-size: ${props?.height ? props.height / 2.4 : 1.1}em;
 		border-radius: ${props?.height && props?.rounding ? props.height * roundingOptions[props.rounding] : 0}em;
 		&:user-invalid {
 			border-color: ${props?.invalidColor ?? "red"};

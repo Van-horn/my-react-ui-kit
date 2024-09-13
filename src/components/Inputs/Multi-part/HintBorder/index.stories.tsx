@@ -1,29 +1,23 @@
 import React, { ChangeEvent, FC, useCallback, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
-import Template, { OnePieceInputProps } from "."
-import { roundingOptions } from "../../../shared-data-for-styles/element-rounding"
+import Template, { HintBorderInputProps } from "."
+import { roundingOptions } from "../../../../shared-data-for-styles/element-rounding"
 
-const OnePieceInput: FC<OnePieceInputProps> = (props) => {
+const HintBorderInput: FC<HintBorderInputProps> = (props) => {
 	const [value, setValue] = useState<string>("")
 	const handleSetValue = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) => setValue(() => e.target.value),
 		[],
 	)
 	return (
-		<Template
-			required
-			placeholder="write..."
-			value={value}
-			onChange={handleSetValue}
-			{...props}
-		/>
+		<Template required value={value} onChange={handleSetValue} {...props} />
 	)
 }
 
 const meta = {
-	title: "Inputs/OnePieceInputs",
-	component: OnePieceInput,
+	title: "Inputs/MultiPartInputs/HintBorderInput",
+	component: HintBorderInput,
 	parameters: {
 		layout: "centered",
 	},
@@ -59,7 +53,7 @@ const meta = {
 		},
 	},
 	args: {},
-} satisfies Meta<OnePieceInputProps>
+} satisfies Meta<HintBorderInputProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -85,7 +79,8 @@ export const Stylized: Story = {
 	args: {
 		themeColor: "purple",
 		invalidColor: "orange",
-		rounding: "semicircle",
+		rounding: "slight",
+		placeholder: "login",
 		width: 13,
 		height: 2.5,
 	},
