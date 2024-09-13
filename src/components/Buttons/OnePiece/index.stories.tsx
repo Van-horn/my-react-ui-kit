@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
 import OnePieceButton from "."
+import buttonKinds from "./index.module.scss"
+import { roundingOptions } from "../../../shared-data-for-styles/element-rounding"
+import { hover_reactionOptions } from "../../../shared-data-for-styles/hover-on-element/reaction-options"
+import { TAB_reactionOptions } from "../../../shared-data-for-styles/TAB-on-element/reaction-options"
 
 const meta = {
 	title: "Buttons/OnePieceButtons",
@@ -24,13 +28,13 @@ const meta = {
 		},
 		kind: {
 			control: "select",
-			options: ["ghost", "filled", "filling", "ghost-filling", "none"],
+			options: Object.keys(buttonKinds),
 			description: "Button type.",
 			defaultValue: "none",
 		},
 		rounding: {
 			control: "select",
-			options: ["semicircle", "medium", "slight", "none"],
+			options: Object.keys(roundingOptions),
 			description:
 				"Rounding an element. It works only, when you indicated button height.",
 			defaultValue: "none",
@@ -47,13 +51,13 @@ const meta = {
 		},
 		TAB_reaction: {
 			control: "select",
-			options: ["zoom", "none"],
+			options: Object.keys(TAB_reactionOptions),
 			description: "Options for styling when focusing with TAB.",
 			defaultValue: "none",
 		},
 		hover_reaction: {
 			control: "select",
-			options: ["blackout", "lightening", "none"],
+			options: Object.keys(hover_reactionOptions),
 			description: "Options for styling when hovering.",
 			defaultValue: "none",
 		},

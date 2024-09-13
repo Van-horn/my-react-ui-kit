@@ -13,4 +13,11 @@ export default createGlobalStyle`
     text-overflow: ellipsis;
     overflow: hidden;
   }
+  input {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  input:focus{
+    outline: none;
+  }
 `

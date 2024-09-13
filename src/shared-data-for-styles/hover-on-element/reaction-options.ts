@@ -8,7 +8,7 @@ export interface I_hover_reactionOptions {
 
 export const hover_reactionOptions: I_hover_reactionOptions = {
 	blackout: css`
-		filter: brightness(0.95);
+		filter: brightness(0.96);
 	`,
 	lightening: css`
 		filter: brightness(1.1);

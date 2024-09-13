@@ -3,7 +3,7 @@ import { memo, FC } from "react"
 import styled from "styled-components"
 
 import ResetCss from "../../../reset.js"
-import buttonKinds from "./index.module.scss"
+import buttonKinds from "./index.module.scss" 
 import {
 	I_TAB_reactionOptions,
 	TAB_reactionOptions,
