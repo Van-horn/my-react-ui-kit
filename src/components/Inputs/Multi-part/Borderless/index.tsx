@@ -3,18 +3,13 @@ import { memo, FC } from "react"
 import styled from "styled-components"
 
 import ResetCss from "../../../../reset.js"
-import {
-	IRoundingOptions,
-	roundingOptions,
-} from "../../../../shared-data-for-styles/element-rounding"
 
 interface SpeciaStyles {
 	themeColor?: string
 	invalidColor?: string
-	rounding?: keyof IRoundingOptions
 }
 
-export interface HintBorderInputProps
+export interface BorderlessProps
 	extends InputHTMLAttributes<HTMLInputElement>,
 		SpeciaStyles {
 	width?: number
@@ -42,31 +37,25 @@ const Div = styled.div.withConfig({
 
 const Input = styled.input.withConfig({
 	shouldForwardProp: (prop) =>
-		!["width", "height", "rounding", "invalidColor", "themeColor"].includes(
-			prop,
-		),
-})<HintBorderInputProps>`
+		!["width", "height", "invalidColor", "themeColor"].includes(prop),
+})<BorderlessProps>`
 	${(props) => `
-		border: 0.149em solid ${props?.themeColor ?? "black"};
-		padding: 0em 0.5em;
+		border: none ;
 		width: 100%;
 		height: 100%;
+		border-bottom: 0.149em solid ${props?.themeColor ?? "black"};
 		font-size: ${props?.height ? props.height / 2.4 : 1.1}em;
-		border-radius: ${props?.height && props?.rounding ? props.height * roundingOptions[props.rounding] : 0}em;
 		&:user-invalid {
 			border-color: ${props?.invalidColor ?? "red"};
 		}
 		&:not(:placeholder-shown) + label{
 			visibility: visible;
-			top: -0.56em;
-			left: 1.4em;  
+			top: -0.63em;
+			left: -0.05em;  
 			transform: scale(0.95);
 			opacity: 1;
 			background-color: white;
-			border: 0.11em solid white;
-			border-top: none;
-			border-bottom: none;
-			transition: all 0.23s ease, opacity 0.1s ease, border 1ms ease;
+			transition: all 0.23s ease, opacity 0.1s ease;
 		}
 		`}
 `
@@ -86,7 +75,7 @@ const Label = styled.label.withConfig({
 		`}
 `
 
-const HintBorderInput: FC<HintBorderInputProps> = memo((props) => {
+const Borderless: FC<BorderlessProps> = memo((props) => {
 	const classes = [props?.className ?? ""].join(" ")
 
 	return (
@@ -104,4 +93,4 @@ const HintBorderInput: FC<HintBorderInputProps> = memo((props) => {
 	)
 })
 
-export default HintBorderInput
+export default Borderless

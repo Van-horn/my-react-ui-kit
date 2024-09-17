@@ -1,10 +1,9 @@
 import React, { ChangeEvent, FC, useCallback, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
-import Template, { HintBorderInputProps } from "."
-import { roundingOptions } from "../../../../shared-data-for-styles/element-rounding"
+import Template, { BorderlessProps } from "."
 
-const HintBorderInput: FC<HintBorderInputProps> = (props) => {
+const Borderless: FC<BorderlessProps> = (props) => {
 	const [value, setValue] = useState<string>("")
 	const handleSetValue = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) => setValue(() => e.target.value),
@@ -16,8 +15,8 @@ const HintBorderInput: FC<HintBorderInputProps> = (props) => {
 }
 
 const meta = {
-	title: "Inputs/MultiPartInputs/HintBorderInput",
-	component: HintBorderInput,
+	title: "Inputs/MultiPartInputs/Borderless",
+	component: Borderless,
 	parameters: {
 		layout: "centered",
 	},
@@ -34,13 +33,6 @@ const meta = {
 			description: "Color, when input is invalid.",
 			defaultValue: "red",
 		},
-		rounding: {
-			control: "select",
-			options: Object.keys(roundingOptions),
-			description:
-				"Rounding an element. It works only, when you indicated input height.",
-			defaultValue: "none",
-		},
 		width: {
 			control: "number",
 			description: "Input width.",
@@ -53,7 +45,7 @@ const meta = {
 		},
 	},
 	args: {},
-} satisfies Meta<HintBorderInputProps>
+} satisfies Meta<BorderlessProps>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -79,7 +71,6 @@ export const Stylized: Story = {
 	args: {
 		themeColor: "purple",
 		invalidColor: "orange",
-		rounding: "semicircle",
 		placeholder: "login",
 		width: 13,
 		height: 2.5,
