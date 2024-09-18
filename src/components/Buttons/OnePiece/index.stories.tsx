@@ -5,6 +5,7 @@ import buttonKinds from "./index.module.scss"
 import { roundingOptions } from "../../../shared-data-for-styles/element-rounding"
 import { hover_reactionOptions } from "../../../shared-data-for-styles/hover-on-element/reaction-options"
 import { TAB_reactionOptions } from "../../../shared-data-for-styles/TAB-on-element/reaction-options"
+import loadingIcons from "../../../shared-data-for-styles/loading-icons"
 
 const meta = {
 	title: "Buttons/OnePieceButtons",
@@ -60,6 +61,23 @@ const meta = {
 			options: Object.keys(hover_reactionOptions),
 			description: "Options for styling when hovering.",
 			defaultValue: "none",
+		},
+		isLoading: {
+			control: "boolean",
+			description: "Shows when you are expecting a query result.",
+			defaultValue: "false",
+		},
+		loadingKind: {
+			control: "select",
+			options: Object.keys(loadingIcons),
+			description: "Loading icon kind.",
+			defaultValue: "none",
+		},
+		loadingIconColor: {
+			control: "select",
+			options: ["purple", "orange", "green", "cornflowerblue", "black"],
+			description: "Load icon color.",
+			defaultValue: "black",
 		},
 	},
 	args: {

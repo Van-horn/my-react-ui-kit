@@ -16,6 +16,9 @@ import {
 	IRoundingOptions,
 	roundingOptions,
 } from "../../../shared-data-for-styles/element-rounding"
+import loadingIcons, {
+	ILoadingIcons,
+} from "../../../shared-data-for-styles/loading-icons"
 
 interface SpeciaStyles {
 	themeColor?: string
@@ -25,6 +28,9 @@ interface SpeciaStyles {
 	rounding?: keyof IRoundingOptions
 	width?: number
 	height?: number
+	isLoading?: boolean
+	loadingKind?: keyof ILoadingIcons
+	loadingIconColor?: string
 }
 
 export interface OnePieceButtonProps
@@ -37,10 +43,11 @@ const Button = styled.button.withConfig({
 	shouldForwardProp: (prop) => prop === "children",
 })<SpeciaStyles>`
 	${(props) => `
+		position: relative;
 		--theme-color: ${props?.themeColor ?? "black"};
 		width: ${props?.width ?? 7}em;
 		height: ${props?.height ?? 3}em;
-		font-size: ${props?.height ? props.height / 2.7 : 1.1}em;
+		font-size: ${props?.height ? props.height / 2.4 : 1.1}em;
 		border-radius: ${props?.height && props?.rounding ? props.height * roundingOptions[props.rounding] : 0}em;
 
 		&:hover {
@@ -63,6 +70,12 @@ const OnePieceButton: FC<OnePieceButtonProps> = memo(({ text, ...props }) => {
 			<ResetCss />
 			<Button {...props} className={classes}>
 				{text}
+				{" \u200B"}
+				{props?.isLoading
+					? loadingIcons[props?.loadingKind ?? "none"]({
+							color: props?.loadingIconColor ?? "black",
+						})
+					: ""}
 			</Button>
 		</>
 	)

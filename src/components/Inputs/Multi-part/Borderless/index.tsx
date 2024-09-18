@@ -76,7 +76,7 @@ const Label = styled.label.withConfig({
 		`}
 `
 
-const Borderless: FC<BorderlessProps> = memo((props) => {
+const BorderlessInput: FC<BorderlessProps> = memo((props) => {
 	const classes = [props?.className ?? ""].join(" ")
 
 	return (
@@ -94,4 +94,4 @@ const Borderless: FC<BorderlessProps> = memo((props) => {
 	)
 })
 
-export default Borderless
+export default BorderlessInput

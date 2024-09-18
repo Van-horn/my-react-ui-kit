@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react"
 
 import Template, { BorderlessProps } from "."
 
-const Borderless: FC<BorderlessProps> = (props) => {
+const BorderlessInput: FC<BorderlessProps> = (props) => {
 	const [value, setValue] = useState<string>("")
 	const handleSetValue = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) => setValue(() => e.target.value),
@@ -16,7 +16,7 @@ const Borderless: FC<BorderlessProps> = (props) => {
 
 const meta = {
 	title: "Inputs/MultiPartInputs/Borderless",
-	component: Borderless,
+	component: BorderlessInput,
 	parameters: {
 		layout: "centered",
 	},

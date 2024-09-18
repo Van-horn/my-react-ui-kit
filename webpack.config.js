@@ -16,6 +16,7 @@ module.exports = {
 		react: "react",
 		"react-dom": "react-dom",
 		"styled-components": "styled-components",
+		"react-icons": "react-icons",
 	},
 	module: {
 		rules: [

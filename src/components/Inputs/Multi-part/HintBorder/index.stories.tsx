@@ -16,7 +16,7 @@ const HintBorderInput: FC<HintBorderInputProps> = (props) => {
 }
 
 const meta = {
-	title: "Inputs/MultiPartInputs/HintBorderInput",
+	title: "Inputs/MultiPartInputs/HintBorder",
 	component: HintBorderInput,
 	parameters: {
 		layout: "centered",
