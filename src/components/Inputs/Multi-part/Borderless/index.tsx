@@ -43,6 +43,8 @@ const Input = styled.input.withConfig({
 		border: none ;
 		width: 100%;
 		height: 100%;
+		border-radius: 0;
+		background-color: transparent;
 		border-bottom: 0.149em solid ${props?.themeColor ?? "black"};
 		font-size: ${props?.height ? props.height / 2.4 : 1.1}em;
 		&:user-invalid {
@@ -54,7 +56,6 @@ const Input = styled.input.withConfig({
 			left: -0.05em;  
 			transform: scale(0.95);
 			opacity: 1;
-			background-color: transparent;
 			transition: all 0.23s ease, opacity 0.1s ease;
 		}
 		`}
