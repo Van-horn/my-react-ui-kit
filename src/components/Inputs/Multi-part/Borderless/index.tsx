@@ -30,8 +30,8 @@ const Div = styled.div.withConfig({
 })<DivProps>`
 	${(props) => `
 	position: relative;
-	width: ${props?.width ?? 13}em;
-	height: ${props?.height ?? 2.5}em; 
+	width: ${props.width}em;
+	height: ${props.height}em; 
 `}
 `
 
@@ -50,11 +50,11 @@ const Input = styled.input.withConfig({
 		}
 		&:not(:placeholder-shown) + label{
 			visibility: visible;
-			top: -0.63em;
+			top: -0.7em;
 			left: -0.05em;  
 			transform: scale(0.95);
 			opacity: 1;
-			background-color: white;
+			background-color: transparent;
 			transition: all 0.23s ease, opacity 0.1s ease;
 		}
 		`}
@@ -66,7 +66,7 @@ const Label = styled.label.withConfig({
 	${(props) => `
 		position: absolute;
 		visibility: hidden;
-		left : 0.64em;
+		left : -0.05em;
 		top: 0.59em;
 		transform: scale(1);
 		opacity: 0;
