@@ -43,7 +43,7 @@ const meta = {
 		width: {
 			control: "number",
 			description: "Button width.",
-			defaultValue: 6,
+			defaultValue: 6.5,
 		},
 		height: {
 			control: "number",
@@ -109,8 +109,8 @@ export const Filled: Story = {
 		themeColor: "purple",
 		rounding: "slight",
 		kind: "filled",
-		width: 7,
-		height: 3,
+		width: 6.5,
+		height: 2.5,
 		TAB_reaction: "zoom",
 		hover_reaction: "lightening",
 	},
@@ -128,8 +128,8 @@ export const Ghost: Story = {
 		themeColor: "purple",
 		rounding: "medium",
 		kind: "ghost",
-		width: 7,
-		height: 3,
+		width: 6.5,
+		height: 2.5,
 		TAB_reaction: "zoom",
 	},
 }
@@ -145,8 +145,8 @@ export const GhostFilling: Story = {
 		themeColor: "purple",
 		rounding: "medium",
 		kind: "ghost-filling",
-		width: 7,
-		height: 3,
+		width: 6.5,
+		height: 2.5,
 		TAB_reaction: "zoom",
 	},
 }
@@ -163,7 +163,7 @@ export const Filling: Story = {
 		themeColor: "purple",
 		rounding: "semicircle",
 		kind: "filling",
-		width: 7,
-		height: 3,
+		width: 6.5,
+		height: 2.5,
 	},
 }

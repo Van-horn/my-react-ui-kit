@@ -3,7 +3,7 @@ import { memo, FC } from "react"
 import styled from "styled-components"
 
 import ResetCss from "../../../reset.js"
-import buttonKinds from "./index.module.scss" 
+import buttonKinds from "./index.module.scss"
 import {
 	I_TAB_reactionOptions,
 	TAB_reactionOptions,
@@ -45,9 +45,9 @@ const Button = styled.button.withConfig({
 	${(props) => `
 		position: relative;
 		--theme-color: ${props?.themeColor ?? "black"};
-		width: ${props?.width ?? 7}em;
-		height: ${props?.height ?? 3}em;
-		font-size: ${props?.height ? props.height / 2.4 : 1.1}em;
+		width: ${props?.width ?? 6.5}em;
+		height: ${props?.height ?? 2.5}em;
+		font-size: ${props?.height ? props.height / 2.6 : 1}em;
 		border-radius: ${props?.height && props?.rounding ? props.height * roundingOptions[props.rounding] : 0}em;
 
 		&:hover {
