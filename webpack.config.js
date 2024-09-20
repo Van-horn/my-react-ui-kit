@@ -35,7 +35,10 @@ module.exports = {
 					{
 						loader: "ts-loader",
 						options: {
-							transpileOnly: true,
+							transpileOnly: false,
+							compilerOptions: {
+								declaration: true,
+							},
 						},
 					},
 				],
@@ -47,4 +50,5 @@ module.exports = {
 	optimization: {
 		usedExports: true,
 	},
+	devtool: "source-map",
 }

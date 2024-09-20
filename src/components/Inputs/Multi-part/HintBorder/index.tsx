@@ -2,7 +2,7 @@ import React, { InputHTMLAttributes } from "react"
 import { memo, FC } from "react"
 import styled from "styled-components"
 
-import ResetCss from "../../../../reset.js"
+import ResetCss from "../../../../reset"
 import {
 	IRoundingOptions,
 	roundingOptions,
