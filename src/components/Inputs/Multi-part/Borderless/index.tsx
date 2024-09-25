@@ -45,7 +45,7 @@ const Input = styled.input.withConfig({
 		height: 100%;
 		border-radius: 0;
 		background-color: transparent;
-		border-bottom: 0.149em solid ${props?.themeColor ?? "black"};
+		border-bottom: 0.15em solid ${props?.themeColor ?? "black"};
 		font-size: ${props?.height ? props.height / 2.4 : 1.1}em;
 		&:user-invalid {
 			border-color: ${props?.invalidColor ?? "red"};

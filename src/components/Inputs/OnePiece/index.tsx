@@ -28,7 +28,7 @@ const Input = styled.input.withConfig({
 		),
 })<OnePieceInputProps>`
 	${(props) => `
-		border: 0.149em solid ${props?.themeColor ?? "black"};
+		border: 0.15em solid ${props?.themeColor ?? "black"};
 		padding: 0em 0.5em;
 		width: ${props?.width ?? 13}em;
 		height: ${props?.height ?? 2.5}em;

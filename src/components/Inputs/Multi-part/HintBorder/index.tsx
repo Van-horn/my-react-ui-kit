@@ -47,7 +47,7 @@ const Input = styled.input.withConfig({
 		),
 })<HintBorderInputProps>`
 	${(props) => `
-		border: 0.149em solid ${props?.themeColor ?? "black"};
+		border: 0.15em solid ${props?.themeColor ?? "black"};
 		padding: 0em 0.5em;
 		width: 100%;
 		height: 100%;
