@@ -15,3 +15,5 @@ export const hover_reactionOptions: I_hover_reactionOptions = {
 	`,
 	none: css``,
 }
+
+export const hover_reactionOptionsKeys = Object.keys(hover_reactionOptions)

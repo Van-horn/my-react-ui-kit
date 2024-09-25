@@ -11,3 +11,5 @@ export const roundingOptions: IRoundingOptions = {
 	slight: 1 / 6,
 	none: 0,
 }
+
+export const roundingOptionsKeys = Object.keys(roundingOptions)

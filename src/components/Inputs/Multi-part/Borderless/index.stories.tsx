@@ -2,6 +2,7 @@ import React, { ChangeEvent, FC, useCallback, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
 import Template, { BorderlessProps } from "."
+import colors from "../../../shared/colors"
 
 const BorderlessInput: FC<BorderlessProps> = (props) => {
 	const [value, setValue] = useState<string>("")
@@ -24,7 +25,7 @@ const meta = {
 	argTypes: {
 		themeColor: {
 			control: "select",
-			options: ["purple", "orange", "green", "cornflowerblue", "black"],
+			options: colors,
 			description: "Input color scheme.",
 			defaultValue: "black",
 		},

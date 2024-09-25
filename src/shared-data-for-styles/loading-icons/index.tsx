@@ -6,7 +6,11 @@ export interface ILoadingIcons {
 	none: () => string
 }
 
-export default {
+const loadingIcons = {
 	spinner: (props) => <Spinner {...props} />,
 	none: () => "",
 } satisfies ILoadingIcons
+
+export default loadingIcons
+
+export const loadingIconsKeys = Object.keys(loadingIcons)

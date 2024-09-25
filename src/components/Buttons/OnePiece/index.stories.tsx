@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import OnePieceButton from "."
-import buttonKinds from "./index.module.scss"
-import { roundingOptions } from "../../../shared-data-for-styles/element-rounding"
-import { hover_reactionOptions } from "../../../shared-data-for-styles/hover-on-element/reaction-options"
-import { TAB_reactionOptions } from "../../../shared-data-for-styles/TAB-on-element/reaction-options"
-import loadingIcons from "../../../shared-data-for-styles/loading-icons"
+import OnePieceButton, { buttons } from "."
+import colors from "../../shared/colors"
+import { roundingOptionsKeys } from "../../../shared-data-for-styles/element-rounding"
+import { TAB_reactionOptionsKeys } from "../../../shared-data-for-styles/TAB-on-element/reaction-options"
+import { loadingIconsKeys } from "../../../shared-data-for-styles/loading-icons"
+import { hover_reactionOptionsKeys } from "./../../../shared-data-for-styles/hover-on-element/reaction-options"
 
 const meta = {
 	title: "Buttons/OnePieceButtons",
@@ -23,19 +23,19 @@ const meta = {
 		},
 		themeColor: {
 			control: "select",
-			options: ["purple", "orange", "green", "cornflowerblue", "black"],
+			options: colors,
 			description: "Button color scheme.",
 			defaultValue: "black",
 		},
 		kind: {
 			control: "select",
-			options: Object.keys(buttonKinds),
+			options: buttons,
 			description: "Button type.",
 			defaultValue: "none",
 		},
 		rounding: {
 			control: "select",
-			options: Object.keys(roundingOptions),
+			options: roundingOptionsKeys,
 			description:
 				"Rounding an element. It works only, when you indicated button height.",
 			defaultValue: "none",
@@ -52,13 +52,13 @@ const meta = {
 		},
 		TAB_reaction: {
 			control: "select",
-			options: Object.keys(TAB_reactionOptions),
+			options: TAB_reactionOptionsKeys,
 			description: "Options for styling when focusing with TAB.",
 			defaultValue: "none",
 		},
 		hover_reaction: {
 			control: "select",
-			options: Object.keys(hover_reactionOptions),
+			options: hover_reactionOptionsKeys,
 			description: "Options for styling when hovering.",
 			defaultValue: "none",
 		},
@@ -69,13 +69,13 @@ const meta = {
 		},
 		loadingKind: {
 			control: "select",
-			options: Object.keys(loadingIcons),
+			options: loadingIconsKeys,
 			description: "Loading icon kind.",
 			defaultValue: "none",
 		},
 		loadingIconColor: {
 			control: "select",
-			options: ["purple", "orange", "green", "cornflowerblue", "black"],
+			options: colors,
 			description: "Load icon color.",
 			defaultValue: "black",
 		},

@@ -14,3 +14,5 @@ export const TAB_reactionOptions: I_TAB_reactionOptions = {
 		outline: none;
 	`,
 }
+
+export const TAB_reactionOptionsKeys = Object.keys(TAB_reactionOptions)

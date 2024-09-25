@@ -22,7 +22,7 @@ import loadingIcons, {
 
 interface SpeciaStyles {
 	themeColor?: string
-	kind?: "ghost" | "filled" | "filling" | "ghost-filling" | "none"
+	kind?: keyof typeof buttonKinds
 	TAB_reaction?: keyof I_TAB_reactionOptions
 	hover_reaction?: keyof I_hover_reactionOptions
 	rounding?: keyof IRoundingOptions
@@ -81,4 +81,5 @@ const OnePieceButton: FC<OnePieceButtonProps> = memo(({ text, ...props }) => {
 	)
 })
 
+export const buttons = Object.keys(buttonKinds)
 export default OnePieceButton

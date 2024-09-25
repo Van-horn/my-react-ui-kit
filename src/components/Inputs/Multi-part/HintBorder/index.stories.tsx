@@ -2,7 +2,11 @@ import React, { ChangeEvent, FC, useCallback, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
 import Template, { HintBorderInputProps } from "."
-import { roundingOptions } from "../../../../shared-data-for-styles/element-rounding"
+import {
+	roundingOptions,
+	roundingOptionsKeys,
+} from "../../../../shared-data-for-styles/element-rounding"
+import colors from "../../../shared/colors"
 
 const HintBorderInput: FC<HintBorderInputProps> = (props) => {
 	const [value, setValue] = useState<string>("")
@@ -25,7 +29,7 @@ const meta = {
 	argTypes: {
 		themeColor: {
 			control: "select",
-			options: ["purple", "orange", "green", "cornflowerblue", "black"],
+			options: colors,
 			description: "Input color scheme.",
 			defaultValue: "black",
 		},
@@ -36,7 +40,7 @@ const meta = {
 		},
 		rounding: {
 			control: "select",
-			options: Object.keys(roundingOptions),
+			options: roundingOptionsKeys,
 			description:
 				"Rounding an element. It works only, when you indicated input height.",
 			defaultValue: "none",
