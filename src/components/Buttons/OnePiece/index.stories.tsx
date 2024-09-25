@@ -126,7 +126,7 @@ export const Ghost: Story = {
 	},
 	args: {
 		themeColor: "purple",
-		rounding: "medium",
+		rounding: "slight",
 		kind: "ghost",
 		width: 6.5,
 		height: 2.5,
@@ -143,7 +143,6 @@ export const GhostFilling: Story = {
 	},
 	args: {
 		themeColor: "purple",
-		rounding: "medium",
 		kind: "ghost-filling",
 		width: 6.5,
 		height: 2.5,
