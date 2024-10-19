@@ -70,7 +70,7 @@ const Button = styled.button.withConfig({
 		}`}
 `
 
-export const initProps: SpeciaStyles = {
+const initProps: SpeciaStyles = {
 	color : "black",
 	initColor: "black",
 	bgcolor: "rgb(235, 235, 235)",

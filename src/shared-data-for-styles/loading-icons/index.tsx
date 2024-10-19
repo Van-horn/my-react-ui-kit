@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react"
-import Spinner from "./Spinner/Spinner"
+import Spinner from "./Spinner"
 
 export interface ILoadingIcons {
 	spinner: ReactElement
@@ -7,11 +7,11 @@ export interface ILoadingIcons {
 	none: string
 }
 
-const loadingIcons = {
+const loadingIcons:ILoadingIcons = {
 	spinner: <Spinner  />,
 	dots : "...",
 	none: "",
-} satisfies ILoadingIcons
+}  
 
 export default loadingIcons
 
