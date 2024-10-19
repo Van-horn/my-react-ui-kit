@@ -19,63 +19,87 @@ import {
 import loadingIcons, {
 	ILoadingIcons,
 } from "../../../shared-data-for-styles/loading-icons"
+import overrideObjProps from "../../../utils/overrideObjProps"
 
 interface SpeciaStyles {
-	themeColor?: string
-	kind?: keyof typeof buttonKinds
-	TAB_reaction?: keyof I_TAB_reactionOptions
-	hover_reaction?: keyof I_hover_reactionOptions
-	rounding?: keyof IRoundingOptions
-	width?: number
-	height?: number
-	isLoading?: boolean
-	loadingKind?: keyof ILoadingIcons
-	loadingIconColor?: string
+	color: string
+	initColor: string
+	bgcolor: string
+	initBgcolor: string
+	kind: keyof typeof buttonKinds
+	width: number
+	height: number
+	rounding: keyof IRoundingOptions
+	isLoading: boolean
+	loadingKind: keyof ILoadingIcons
+	loadingIconColor: string
+	TAB_reaction: keyof I_TAB_reactionOptions
+	hover_reaction: keyof I_hover_reactionOptions
 }
 
 export interface OnePieceButtonProps
-	extends ButtonHTMLAttributes<HTMLButtonElement>,
-		SpeciaStyles {
+extends ButtonHTMLAttributes<HTMLButtonElement>,
+Partial<SpeciaStyles> {
 	text: string
 }
 
 const Button = styled.button.withConfig({
 	shouldForwardProp: (prop) => prop === "children",
 })<SpeciaStyles>`
-	${(props) => `
-		position: relative;
-		--theme-color: ${props?.themeColor ?? "black"};
-		width: ${props?.width ?? 6.5}em;
-		height: ${props?.height ?? 2.5}em;
-		font-size: ${props?.height ? props.height / 2.6 : 1}em;
-		border-radius: ${props?.height && props?.rounding ? props.height * roundingOptions[props.rounding] : 0}em;
+	${({color,initColor,bgcolor,initBgcolor,width,height,rounding,TAB_reaction,hover_reaction}) => `
+		--initColor : ${initColor};
+		--color : ${color};
+		--bgcolor : ${bgcolor};
+		--initBgcolor : ${initBgcolor};
+		
+		border-width: 0.15em; 
+		width: ${width}em;
+		height: ${height}em;
+		font-size: ${height / 2.5}em;
+		border-radius: ${height * roundingOptions[rounding]}em;
 
 		&:hover {
-			${hover_reactionOptions[props?.hover_reaction ?? "none"]}
+			${hover_reactionOptions[hover_reaction]}
 		}
 
 		&:focus-visible {
-			${TAB_reactionOptions[props?.TAB_reaction ?? "none"]};
+			${TAB_reactionOptions[TAB_reaction]};
 		}`}
 `
 
-const OnePieceButton: FC<OnePieceButtonProps> = memo(({ text, ...props }) => {
+export const initProps: SpeciaStyles = {
+	color : "black",
+	initColor: "black",
+	bgcolor: "rgb(235, 235, 235)",
+	initBgcolor: "rgb(235, 235, 235)",
+	width: 6.5,
+	height: 2.5,
+	kind:"none",
+	loadingKind :"none",
+	rounding : "none",
+	isLoading: false,
+	loadingIconColor:  "black",
+	TAB_reaction: "none",
+	hover_reaction: "none"
+}
+
+const OnePieceButton: FC<OnePieceButtonProps> = memo(({text, ...props}) => {
 	const classes = [
 		props?.className ?? "",
-		buttonKinds[props?.kind ?? "none"],
+		buttonKinds[props?.kind ?? initProps.kind],
 	].join(" ")
 
 	return (
 		<>
 			<ResetCss />
-			<Button {...props} className={classes}>
+			<Button {...overrideObjProps<SpeciaStyles, Partial<SpeciaStyles>>(initProps, props)} className={classes}>
 				{text}
-				{" \u200B"}
+				{/* {" \u200B"}
 				{props?.isLoading
 					? loadingIcons[props?.loadingKind ?? "none"]({
 							color: props?.loadingIconColor ?? "black",
 						})
-					: ""}
+					: ""} */}
 			</Button>
 		</>
 	)

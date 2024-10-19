@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
 import OnePieceButton, { buttons } from "."
-import colors from "../../shared/colors"
+import colors from "../../../shared-data-for-styles/colors"
 import { roundingOptionsKeys } from "../../../shared-data-for-styles/element-rounding"
 import { TAB_reactionOptionsKeys } from "../../../shared-data-for-styles/TAB-on-element/reaction-options"
 import { loadingIconsKeys } from "../../../shared-data-for-styles/loading-icons"
@@ -19,65 +19,68 @@ const meta = {
 			required: true,
 			control: "text",
 			description: "Text in button.",
-			defaultValue: "click",
 		},
-		themeColor: {
+		color: {
+			control: "select",
+			options: colors,
+			description: "Button color scheme for transitions.",
+		},
+		initColor: {
 			control: "select",
 			options: colors,
 			description: "Button color scheme.",
-			defaultValue: "black",
+		},
+		bgcolor: {
+			control: "select",
+			options: colors,
+			description: "Button background-color scheme for transitions.",
+		},
+		initBgcolor: {
+			control: "select",
+			options: colors,
+			description: "Button background-color scheme.",
 		},
 		kind: {
 			control: "select",
 			options: buttons,
-			description: "Button type.",
-			defaultValue: "none",
+			description: "Button kind.",
 		},
 		rounding: {
 			control: "select",
 			options: roundingOptionsKeys,
-			description:
-				"Rounding an element. It works only, when you indicated button height.",
-			defaultValue: "none",
+			description: "Rounding an element.",
 		},
 		width: {
 			control: "number",
 			description: "Button width.",
-			defaultValue: 6.5,
 		},
 		height: {
 			control: "number",
 			description: "Button height.",
-			defaultValue: 2.5,
 		},
 		TAB_reaction: {
 			control: "select",
 			options: TAB_reactionOptionsKeys,
 			description: "Options for styling when focusing with TAB.",
-			defaultValue: "none",
 		},
 		hover_reaction: {
 			control: "select",
 			options: hover_reactionOptionsKeys,
 			description: "Options for styling when hovering.",
-			defaultValue: "none",
 		},
 		isLoading: {
 			control: "boolean",
 			description: "Shows when you are expecting a query result.",
-			defaultValue: "false",
 		},
 		loadingKind: {
 			control: "select",
 			options: loadingIconsKeys,
 			description: "Loading icon kind.",
-			defaultValue: "none",
 		},
 		loadingIconColor: {
 			control: "select",
 			options: colors,
 			description: "Load icon color.",
-			defaultValue: "black",
 		},
 	},
 	args: {
@@ -106,13 +109,10 @@ export const Filled: Story = {
 		},
 	},
 	args: {
-		themeColor: "purple",
-		rounding: "slight",
 		kind: "filled",
-		width: 6.5,
-		height: 2.5,
-		TAB_reaction: "zoom",
-		hover_reaction: "lightening",
+		rounding: "semicircle",
+		initColor: "white",
+		initBgcolor: "purple",
 	},
 }
 
@@ -125,12 +125,10 @@ export const Ghost: Story = {
 		},
 	},
 	args: {
-		themeColor: "purple",
-		rounding: "slight",
 		kind: "ghost",
-		width: 6.5,
-		height: 2.5,
-		TAB_reaction: "zoom",
+		rounding: "slight",
+		initColor: "purple",
+		initBgcolor: "white",
 	},
 }
 export const GhostFilling: Story = {
@@ -142,11 +140,11 @@ export const GhostFilling: Story = {
 		},
 	},
 	args: {
-		themeColor: "purple",
 		kind: "ghost-filling",
-		width: 6.5,
-		height: 2.5,
-		TAB_reaction: "zoom",
+		initColor: "purple",
+		initBgcolor: "white",
+		color: "white",
+		bgcolor: "purple",
 	},
 }
 
@@ -159,10 +157,9 @@ export const Filling: Story = {
 		},
 	},
 	args: {
-		themeColor: "purple",
-		rounding: "semicircle",
 		kind: "filling",
-		width: 6.5,
-		height: 2.5,
+		rounding: "semicircle",
+		initColor: "white",
+		initBgcolor: "purple",
 	},
 }

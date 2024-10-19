@@ -1,40 +1,48 @@
 .none {
     border: none;
-    color: var(--theme-color);
+    color: var(--initColor);
+    background-color: var(--initBgcolor);
 }
 
 .filled {
-    color: white;
-    background-color: var(--theme-color);
     border: none;
+    color: var(--initColor);
+    background-color: var(--initBgcolor);
+}
+
+.ghost {
+    border-style: solid;
+    border-color: var(--initColor);
+    color: var(--initColor);
+    background-color: var(--initBgcolor);
+}
+
+.ghost-filling {
+    border-style: solid;
+    border-color: var(--initColor);
+    color: var(--initColor);
+    background-color: var(--initBgcolor);
 }
 
 .filling {
-    background-clip: content-box;
     padding: 0.2em;
-    border: 0.15em solid var(--theme-color);
-    background-color: var(--theme-color);
-    color: white;
+    background-clip: content-box;
+    border-style: solid;
+    border-color: var(--initBgcolor);
+    background-color: var(--initBgcolor);
+    color: var(--initColor);
     transition: padding 0.2s ease;
     }
 
-.ghost,
-.ghost-filling {
-        border: 0.15em solid var(--theme-color);
-        color: var(--theme-color);
-        background-color: white;
-    }
-
-
 @media (hover:hover) {
+    .ghost-filling:hover {
+        color: var(--color);
+        background-color: var(--bgcolor);
+        transition: background-color 0.2s ease;
+    }
     .filling:hover {
         padding: 0;
         transition: padding 0.2s ease;
     } 
-     .ghost-filling:hover {
-        color: white;
-        background-color: var(--theme-color);
-        transition: background-color 0.2s ease;
-    }
 }
 

@@ -5,11 +5,11 @@ export default createGlobalStyle`
     box-sizing: border-box; 
     margin: 0; 
     padding: 0;
+    appearance: none;
     font-family: 'Roboto', sans-serif;
   }
   button {
     cursor: pointer;
-    /* background-clip: content-box; */
     text-overflow: ellipsis;
     overflow: hidden;
   }

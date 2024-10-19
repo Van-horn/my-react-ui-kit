@@ -6,7 +6,7 @@ import {
 	roundingOptions,
 	roundingOptionsKeys,
 } from "../../../../shared-data-for-styles/element-rounding"
-import colors from "../../../shared/colors"
+import colors from "../../../../shared-data-for-styles/colors"
 
 const HintBorderInput: FC<HintBorderInputProps> = (props) => {
 	const [value, setValue] = useState<string>("")

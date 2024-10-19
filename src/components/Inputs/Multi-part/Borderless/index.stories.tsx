@@ -2,7 +2,7 @@ import React, { ChangeEvent, FC, useCallback, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 
 import Template, { BorderlessProps } from "."
-import colors from "../../../shared/colors"
+import colors from "../../../../shared-data-for-styles/colors"
 
 const BorderlessInput: FC<BorderlessProps> = (props) => {
 	const [value, setValue] = useState<string>("")
