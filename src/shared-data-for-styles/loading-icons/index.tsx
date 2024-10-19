@@ -1,14 +1,16 @@
-import React, { FC } from "react"
-import Spinner, { SpinnerProps } from "./Spinner/Spinner"
+import React, { ReactElement } from "react"
+import Spinner from "./Spinner/Spinner"
 
 export interface ILoadingIcons {
-	spinner: FC<SpinnerProps>
-	none: () => string
+	spinner: ReactElement
+	dots: string
+	none: string
 }
 
 const loadingIcons = {
-	spinner: (props) => <Spinner {...props} />,
-	none: () => "",
+	spinner: <Spinner  />,
+	dots : "...",
+	none: "",
 } satisfies ILoadingIcons
 
 export default loadingIcons

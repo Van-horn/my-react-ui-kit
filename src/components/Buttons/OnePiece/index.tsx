@@ -52,6 +52,9 @@ const Button = styled.button.withConfig({
 		--bgcolor : ${bgcolor};
 		--initBgcolor : ${initBgcolor};
 		
+		display: flex;
+  		align-items: center;
+		justify-content: center;
 		border-width: 0.15em; 
 		width: ${width}em;
 		height: ${height}em;
@@ -94,12 +97,7 @@ const OnePieceButton: FC<OnePieceButtonProps> = memo(({text, ...props}) => {
 			<ResetCss />
 			<Button {...overrideObjProps<SpeciaStyles, Partial<SpeciaStyles>>(initProps, props)} className={classes}>
 				{text}
-				{/* {" \u200B"}
-				{props?.isLoading
-					? loadingIcons[props?.loadingKind ?? "none"]({
-							color: props?.loadingIconColor ?? "black",
-						})
-					: ""} */}
+				{props?.isLoading && props?.loadingKind ? loadingIcons[props.loadingKind]: loadingIcons[initProps.loadingKind]}
 			</Button>
 		</>
 	)
