@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, useCallback, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Template, { OnePieceInputProps } from ".";
+import Template, { initProps, OnePieceInputProps } from ".";
 import { roundingOptionsKeys } from "../../../shared-data-for-styles/element-rounding";
 import colors from "../../../shared-data-for-styles/colors";
 import { iconsForInputKeys } from "../../../shared-data-for-styles/icons-for-input";
@@ -41,28 +41,42 @@ const meta = {
          control: "select",
          options: colors,
          description: "Input color scheme.",
+         defaultValue: initProps.themeColor,
       },
       invalidColor: {
          control: "text",
          description: "Color, when input is invalid.",
+         defaultValue: initProps.invalidColor,
       },
       rounding: {
          control: "select",
          options: roundingOptionsKeys,
          description: "Rounding an element.",
+         defaultValue: initProps.rounding,
       },
       width: {
          control: "number",
          description: "Input width.",
+         defaultValue: initProps.width,
       },
       height: {
          control: "number",
          description: "Input height.",
+         defaultValue: initProps.width,
       },
       icon: {
          control: "select",
          options: iconsForInputKeys,
          description: "Icons.",
+         defaultValue: initProps.icon,
+      },
+      iconState: {
+         control: "boolean",
+         description: "Icon state.",
+         defaultValue: initProps.iconState,
+      },
+      onIconClick: {
+         description: "Icon click handler.",
       },
    },
    args: {},

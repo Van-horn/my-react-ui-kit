@@ -49,6 +49,7 @@ module.exports = {
 	plugins: [],
 	optimization: {
 		usedExports: true,
+		minimize: true,
 	},
 	devtool: "source-map",
 }

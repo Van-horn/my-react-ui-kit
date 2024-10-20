@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   *, *::before, *::after {
@@ -17,7 +17,10 @@ export default createGlobalStyle`
     text-overflow: ellipsis;
     overflow: hidden;
   }
+  input[type="password"]::-ms-reveal {
+    display: none;
+  }
   input:focus{
     outline: none;
   }
-`
+`;

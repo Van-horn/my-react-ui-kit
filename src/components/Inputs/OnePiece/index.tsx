@@ -30,7 +30,7 @@ export interface OnePieceInputProps
    height: number;
 }
 
-const initProps: SpeciaStyles = {
+export const initProps: SpeciaStyles = {
    themeColor: "rgb(200, 200, 200)",
    invalidColor: "red",
    rounding: "none",
