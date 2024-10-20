@@ -21,8 +21,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
   }
+  input[type="password"]::-ms-reveal {
+    display: none;
+  }
   input:focus{
     outline: none;
   }
 `},"./src/shared-data-for-styles/colors.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>__WEBPACK_DEFAULT_EXPORT__});const __WEBPACK_DEFAULT_EXPORT__=["purple","orange","green","cornflowerblue","black"]}}]);
-//# sourceMappingURL=components-Inputs-Multi-part-Borderless-index-stories.cb5ee6ae.iframe.bundle.js.map
+//# sourceMappingURL=components-Inputs-Multi-part-Borderless-index-stories.7cfac6ba.iframe.bundle.js.map

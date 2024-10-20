@@ -1,0 +1,41 @@
+"use strict";(self.webpackChunkmy_react_ui_kit=self.webpackChunkmy_react_ui_kit||[]).push([[21],{"./src/components/Inputs/OnePiece/index.stories.tsx":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.r(__webpack_exports__),__webpack_require__.d(__webpack_exports__,{Password:()=>index_stories_Password,Primary:()=>Primary,Stylized:()=>Stylized,__namedExportsOrder:()=>__namedExportsOrder,default:()=>index_stories});var react=__webpack_require__("./node_modules/react/index.js"),styled_components_browser_esm=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js"),src_reset=__webpack_require__("./src/reset.ts"),element_rounding=__webpack_require__("./src/shared-data-for-styles/element-rounding.ts"),overrideObjProps=__webpack_require__("./src/utils/overrideObjProps.ts"),bs=__webpack_require__("./node_modules/react-icons/bs/index.mjs");const StyledBsEyeSlash=(0,styled_components_browser_esm.Ay)(bs.Sq0)`
+   font: inherit;
+   font-size: 115%;
+   position: absolute;
+   right: 1em;
+   cursor: pointer;
+`,StyledBsEye=(0,styled_components_browser_esm.Ay)(bs.JPe)`
+   font: inherit;
+   font-size: 115%;
+   position: absolute;
+   right: 1em;
+   cursor: pointer;
+`,Spinner=({iconState,onIconClick})=>iconState?react.createElement(StyledBsEyeSlash,{onClick:onIconClick}):react.createElement(StyledBsEye,{onClick:onIconClick}),Password=Spinner;Spinner.__docgenInfo={description:"",methods:[],displayName:"Spinner",props:{iconState:{required:!0,tsType:{name:"boolean"},description:""},onIconClick:{required:!0,tsType:{name:"MouseEventHandler"},description:""}}};const IconsForInput={passwordEye:props=>react.createElement(Password,props),none:props=>""},icons_for_input=IconsForInput,iconsForInputKeys=Object.keys(IconsForInput),initProps={themeColor:"rgb(200, 200, 200)",invalidColor:"red",rounding:"none",width:13,height:2.5,icon:"none",iconState:!1,onIconClick:()=>{}},StyledDiv=styled_components_browser_esm.Ay.div.withConfig({shouldForwardProp:prop=>!Object.keys(initProps).includes(prop)})`
+   ${({height,themeColor})=>`\n\t\tposition: relative;\n\t\tdisplay: flex;\n  \t\talign-items: safe center;\n\t\tcolor: ${themeColor};\n\t\tfont-size: ${height/2.5}em;\n\t`}
+`,Input=styled_components_browser_esm.Ay.input.withConfig({shouldForwardProp:prop=>!Object.keys(initProps).includes(prop)})`
+   ${({themeColor,width,height,rounding,invalidColor,icon})=>`\n\t\tpadding: 0em 0.5em;\n\t\tfont-size: inherit;\n\t\theight: ${height}em;\n\t\tpadding-right: ${icon!==initProps.icon?2.7:.5}em;\n\t\tborder: 0.15em solid ${themeColor};\n\t\twidth: ${width}em;\n\t\tborder-radius: ${height*element_rounding.d[rounding]}em;\n\n\t\t&:user-invalid {\n\t\t\tborder-color: ${invalidColor};\n\t\t}\n\t\t`}
+`,OnePieceInput=(0,react.memo)((props=>{const classes=[props?.className??""].join(" "),processedProps=(0,overrideObjProps.A)(initProps,props);return react.createElement(react.Fragment,null,react.createElement(src_reset.A,null),react.createElement(StyledDiv,processedProps,react.createElement(Input,{...processedProps,className:classes}),props?.icon?icons_for_input[props.icon]({iconState:props?.iconState??initProps.iconState,onIconClick:props?.onIconClick??initProps.onIconClick}):icons_for_input[initProps.icon]({iconState:initProps.iconState,onIconClick:initProps.onIconClick})))})),OnePiece=OnePieceInput;OnePieceInput.__docgenInfo={description:"",methods:[],displayName:"OnePieceInput"};const index_stories={title:"Inputs/OnePieceInputs",component:props=>{const[value,setValue]=(0,react.useState)(""),[iconState,setIconState]=(0,react.useState)(!0),handleSetValue=(0,react.useCallback)((e=>setValue((()=>e.target.value))),[]),handleIconClick=(0,react.useCallback)((()=>{setIconState((prev=>!prev))}),[]);return react.createElement(OnePiece,{required:!0,type:props?.icon&&iconState?"password":"text",value,onChange:handleSetValue,iconState,onIconClick:handleIconClick,...props})},parameters:{layout:"centered"},tags:["autodocs","wip"],argTypes:{themeColor:{control:"select",options:__webpack_require__("./src/shared-data-for-styles/colors.ts").A,description:"Input color scheme.",defaultValue:initProps.themeColor},invalidColor:{control:"text",description:"Color, when input is invalid.",defaultValue:initProps.invalidColor},rounding:{control:"select",options:element_rounding.N,description:"Rounding an element.",defaultValue:initProps.rounding},width:{control:"number",description:"Input width.",defaultValue:initProps.width},height:{control:"number",description:"Input height.",defaultValue:initProps.width},icon:{control:"select",options:iconsForInputKeys,description:"Icons.",defaultValue:initProps.icon},iconState:{control:"boolean",description:"Icon state.",defaultValue:initProps.iconState},onIconClick:{description:"Icon click handler."}},args:{}},Primary={parameters:{docs:{description:{story:"Input without styles."}}}},Stylized={parameters:{docs:{description:{story:"Added some styles."}}},args:{themeColor:"purple",invalidColor:"rgb(237, 79, 79)",placeholder:"write...",rounding:"semicircle"}},index_stories_Password={parameters:{docs:{description:{story:"Input for password."}}},args:{themeColor:"purple",icon:"passwordEye",placeholder:"write..."}},__namedExportsOrder=["Primary","Stylized","Password"];Primary.parameters={...Primary.parameters,docs:{...Primary.parameters?.docs,source:{originalSource:'{\n  parameters: {\n    docs: {\n      description: {\n        story: "Input without styles."\n      }\n    }\n  }\n}',...Primary.parameters?.docs?.source}}},Stylized.parameters={...Stylized.parameters,docs:{...Stylized.parameters?.docs,source:{originalSource:'{\n  parameters: {\n    docs: {\n      description: {\n        story: "Added some styles."\n      }\n    }\n  },\n  args: {\n    themeColor: "purple",\n    invalidColor: "rgb(237, 79, 79)",\n    placeholder: "write...",\n    rounding: "semicircle"\n  }\n}',...Stylized.parameters?.docs?.source}}},index_stories_Password.parameters={...index_stories_Password.parameters,docs:{...index_stories_Password.parameters?.docs,source:{originalSource:'{\n  parameters: {\n    docs: {\n      description: {\n        story: "Input for password."\n      }\n    }\n  },\n  args: {\n    themeColor: "purple",\n    icon: "passwordEye",\n    placeholder: "write..."\n  }\n}',...index_stories_Password.parameters?.docs?.source}}}},"./src/reset.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>__WEBPACK_DEFAULT_EXPORT__});const __WEBPACK_DEFAULT_EXPORT__=__webpack_require__("./node_modules/styled-components/dist/styled-components.browser.esm.js").DU`
+  *, *::before, *::after {
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0;
+    appearance: none;
+    font-family: 'Roboto', sans-serif;
+  }
+  button {
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  input {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  input[type="password"]::-ms-reveal {
+    display: none;
+  }
+  input:focus{
+    outline: none;
+  }
+`},"./src/shared-data-for-styles/colors.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>__WEBPACK_DEFAULT_EXPORT__});const __WEBPACK_DEFAULT_EXPORT__=["purple","orange","green","cornflowerblue","black"]},"./src/shared-data-for-styles/element-rounding.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{N:()=>roundingOptionsKeys,d:()=>roundingOptions});const roundingOptions={semicircle:.5,medium:1/3,slight:1/6,none:0},roundingOptionsKeys=Object.keys(roundingOptions)},"./src/utils/overrideObjProps.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>__WEBPACK_DEFAULT_EXPORT__});const __WEBPACK_DEFAULT_EXPORT__=(init,major)=>({...init,...major})}}]);
+//# sourceMappingURL=components-Inputs-OnePiece-index-stories.7ee57dc8.iframe.bundle.js.map

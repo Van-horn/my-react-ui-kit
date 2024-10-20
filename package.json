@@ -5,7 +5,7 @@
 	"main": "./dist/index.js",
 	"scripts": {
 		"pub": "webpack && npm version patch && npm publish",
-		"build": "webpack && npm run build-storybook",
+		"build": "webpack",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build -o docs",
 		"t-styles": "npx typed-css-modules -p **/*.module.{css,scss}"

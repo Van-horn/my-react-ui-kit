@@ -21,8 +21,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
   }
+  input[type="password"]::-ms-reveal {
+    display: none;
+  }
   input:focus{
     outline: none;
   }
 `},"./src/shared-data-for-styles/colors.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>__WEBPACK_DEFAULT_EXPORT__});const __WEBPACK_DEFAULT_EXPORT__=["purple","orange","green","cornflowerblue","black"]},"./src/shared-data-for-styles/element-rounding.ts":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{N:()=>roundingOptionsKeys,d:()=>roundingOptions});const roundingOptions={semicircle:.5,medium:1/3,slight:1/6,none:0},roundingOptionsKeys=Object.keys(roundingOptions)}}]);
-//# sourceMappingURL=components-Inputs-Multi-part-HintBorder-index-stories.4a2e1688.iframe.bundle.js.map
+//# sourceMappingURL=components-Inputs-Multi-part-HintBorder-index-stories.9c970a1f.iframe.bundle.js.map
