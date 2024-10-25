@@ -1,8 +1,6 @@
-import { lazy } from "react"
+import OnePieceButton from "./components/Buttons/OnePiece";
+import OnePieceInput from "./components/Inputs/OnePiece";
+import HintBorderInput from "./components/Inputs/Multi-part/HintBorder";
+import BorderlessInput from "./components/Inputs/Multi-part/Borderless";
 
-const OnePieceButton =lazy(()=>import("./components/Buttons/OnePiece")) 
-const OnePieceInput =lazy(()=>import("./components/Inputs/OnePiece")) 
-const HintBorderInput =lazy(()=>import("./components/Inputs/Multi-part/HintBorder")) 
-const BorderlessInput =lazy(()=>import("./components/Inputs/Multi-part/Borderless")) 
-
-export { OnePieceButton, OnePieceInput, HintBorderInput, BorderlessInput }
+export { OnePieceButton, OnePieceInput, HintBorderInput, BorderlessInput };
